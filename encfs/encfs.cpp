@@ -17,6 +17,10 @@
 
 #include "encfs.h"
 
+#ifdef __ANDROID__
+# include <androidglue.h>
+#endif
+
 #include <cstdio>
 #include <cstring>
 #include <unistd.h>
@@ -675,6 +679,9 @@ int encfs_statfs(const char *path, struct statvfs *st)
 {
     EncFS_Context *ctx = context();
 
+    return -EIO;
+#if 0
+
     int res = -EIO;
     try
     {
@@ -697,6 +704,7 @@ int encfs_statfs(const char *path, struct statvfs *st)
 	err.log( _RLWarningChannel );
     }
     return res;
+#endif
 }
 
 #ifdef HAVE_XATTR

@@ -20,6 +20,10 @@
 #include "DirNode.h"
 #include "FileUtils.h"
 
+#ifdef __ANDROID__
+# include <androidglue.h>
+#endif
+
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <cerrno>

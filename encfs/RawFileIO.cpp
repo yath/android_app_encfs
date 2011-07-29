@@ -22,6 +22,10 @@
 
 #include "RawFileIO.h"
 
+#ifdef __ANDROID__
+# include <androidglue.h>
+#endif
+
 #include <rlog/rlog.h>
 
 #include <sys/types.h>

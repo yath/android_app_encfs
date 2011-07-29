@@ -28,6 +28,10 @@
 #include <sys/fsuid.h>
 #endif
 
+#ifdef __ANDROID__
+#include <androidglue.h>
+#endif
+
 #include <cstring>
 
 #include "config.h"
